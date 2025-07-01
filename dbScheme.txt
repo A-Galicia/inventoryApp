@@ -1,0 +1,19 @@
+burgers:
+    single: $5
+    double: $8
+    triple: $12
+    cuban style: $13
+
+fries:
+    regular: $3
+    cajun: $5
+    spicy: $4
+
+drinks:
+    coke product: $3
+    slushy: $8
+
+snacks:
+    prezels: $2
+    chips: $3
+    
