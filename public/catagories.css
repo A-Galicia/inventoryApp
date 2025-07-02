@@ -1,0 +1,33 @@
+body {
+  background-color: gray;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catagoryDiv {
+  display: flex;
+  border: 5px solid red;
+  flex-direction: column;
+  width: 40%;
+}
+
+.catagory {
+  margin: 10px;
+  border: 5px solid blue;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+a {
+  display: block;
+  border: 5px solid red;
+  text-decoration: none;
+  color: black;
+}

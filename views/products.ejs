@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Inventory</title>
-    <link rel="stylesheet" href="welcome.css" />
+    <link rel="stylesheet" href="products.css" />
+    <link rel="stylesheet" href="navBarFooter.css" />
   </head>
   <body>
+    <%- include('./navBar.ejs') %>
     <div class="main">
-      <h1>All Products</h1>
-      <ul>
+      <h1><%= title %></h1>
+      <div class="productDiv">
         <% products.map((product) => { %>
-        <li>Product: <%= product.name %> -<%= product.price %></li>
+        <a href="/products/<%= product.id %>">
+          <div class="product">
+            <p>Product: <%= product.name %></p>
+            <p>Price: <%= product.price %></p>
+          </div>
+        </a>
         <% }) %>
-      </ul>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid orangered;
+  background-color: yellowgreen;
+  padding: 20px;
+  border-radius: 100px;
+  justify-self: center;
+  width: 97%;
+  font-size: 1.2rem;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+  margin-inline: 10px;
+}

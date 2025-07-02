@@ -8,16 +8,24 @@ body {
   align-items: center;
 }
 
+.productDiv {
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid red;
+}
+
+.product {
+  margin: 10px;
+  border: 5px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 a {
   display: block;
   border: 5px solid red;
   width: max-content;
   text-decoration: none;
   color: black;
-}
-
-.divBtn {
-  border: 5px solid blue;
-  padding: 10px;
-  width: max-content;
 }
