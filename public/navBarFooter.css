@@ -19,3 +19,12 @@ li {
   list-style-type: none;
   margin-inline: 10px;
 }
+
+.navAnchor {
+  display: block;
+  width: max-content;
+  border: 5px solid red;
+  width: max-content;
+  text-decoration: none;
+  color: black;
+}

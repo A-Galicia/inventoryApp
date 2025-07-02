@@ -1,3 +1,6 @@
+#Spreadsheet
+*.xlsx
+
 # Logs
 logs
 *.log
