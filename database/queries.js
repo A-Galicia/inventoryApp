@@ -18,7 +18,7 @@ async function getQueryItem(id) {
 
 async function getQueryCatagories(id) {
   const { rows } = await pool.query(
-    'SELECT DISTINCT products.name FROM catagories INNER JOIN products ON catagory_id = $1',
+    'SELECT DISTINCT products.name, products.id FROM catagories INNER JOIN products ON catagory_id = $1',
     [id]
   );
   console.log(rows);
