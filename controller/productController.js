@@ -23,7 +23,7 @@ async function getAllCatagories(req, res) {
 async function getQueryCatagories(req, res) {
   console.log(req.params.id);
   const products = await db.getQueryCatagories(req.params.id);
-  res.render('catagories', { catagory: products });
+  res.render('singleCatagory', { catagory: products });
 }
 
 async function getQueryItem(req, res) {
