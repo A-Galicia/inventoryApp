@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Inventory</title>
+    <link rel="stylesheet" href="catagories.css" />
+    <link rel="stylesheet" href="navBarFooter.css" />
+  </head>
+  <body>
+    <%- include('navBar.ejs') %>
+    <div class="main">
+      <h1>Catagories</h1>
+      <div class="catagoryDiv">
+        <% catagory.map((product) => { %>
+        <a class="catagoryAnchor" href="/catagories/<%= product.id %>">
+          <div class="catagory">
+            <p><%= product.name %></p>
+          </div>
+        </a>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

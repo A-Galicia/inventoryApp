@@ -20,13 +20,14 @@ async function getAllCatagories(req, res) {
   res.render('catagories', { catagories: catagories });
 }
 
-function getQueryCatagories(req, res) {
-  res.send('Hellow from catagroies query');
+async function getQueryCatagories(req, res) {
+  console.log(req.params.id);
+  const products = await db.getQueryCatagories(req.params.id);
+  res.render('catagories', { catagory: products });
 }
 
 async function getQueryItem(req, res) {
-  const itemId = req.params.id;
-  const item = await db.getQueryItem(itemId);
+  const item = await db.getQueryItem(req.params.id);
   res.render('item', { item: item });
 }
 
