@@ -34,10 +34,15 @@ async function getItemSearch(name) {
   return rows;
 }
 
+async function postCatagory(name) {
+  await pool.query('INSERT INTO catagories (name) VALUES ($1)', [name]);
+}
+
 module.exports = {
   getAllCatagories,
   getAllProducts,
   getQueryItem,
   getQueryCatagories,
   getItemSearch,
+  postCatagory,
 };

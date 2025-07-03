@@ -28,10 +28,21 @@ async function getItemSearch(req, res) {
   res.render('products', { title: 'Search Results', products: result });
 }
 
+async function createCatagoryGet(req, res) {
+  res.render('catagoryForm');
+}
+
+async function createCatagoryPost(req, res) {
+  await db.postCatagory(req.body.name);
+  res.redirect('/catagories');
+}
+
 module.exports = {
   getAllCatagories,
   getQueryCatagories,
   getQueryItem,
   getAllProducts,
   getItemSearch,
+  createCatagoryGet,
+  createCatagoryPost,
 };

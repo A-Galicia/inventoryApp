@@ -11,6 +11,7 @@
     <%- include('navBar.ejs') %>
     <div class="main">
       <h1>Catagories</h1>
+      <a href="/catagories/form">Create New Catagory</a>
       <div class="catagoryDiv">
         <% catagories.map((catagory) => { %>
         <a class="catagoryAnchor" href="/catagories/<%= catagory.id %>">

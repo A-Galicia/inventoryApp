@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Inventory</title>
+    <link rel="stylesheet" href="/catagories.css" />
+    <link rel="stylesheet" href="/navBarFooter.css" />
+  </head>
+  <body>
+    <%- include('navBar.ejs') %>
+    <div class="main">
+      <form action="/catagories/form" method="post">
+        <label for="name">Name of new catagory:</label>
+        <input id="name" type="text" name="name" required>
+        <button type="submit">Submit</button>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>
