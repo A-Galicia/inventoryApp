@@ -24,8 +24,10 @@ function getQueryCatagories(req, res) {
   res.send('Hellow from catagroies query');
 }
 
-function getQueryProducts(req, res) {
-  res.send('Hellow from products query');
+async function getQueryItem(req, res) {
+  const itemId = req.params.id;
+  const item = await db.getQueryItem(itemId);
+  res.render('item', { item: item });
 }
 
 async function getAllProducts(req, res) {
@@ -36,6 +38,6 @@ async function getAllProducts(req, res) {
 module.exports = {
   getAllCatagories,
   getQueryCatagories,
-  getQueryProducts,
+  getQueryItem,
   getAllProducts,
 };
