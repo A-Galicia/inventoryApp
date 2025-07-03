@@ -6,6 +6,7 @@ const indexRouter = Router();
 
 indexRouter.get('/catagories/:id', productController.getQueryCatagories);
 indexRouter.get('/catagories', productController.getAllCatagories);
+indexRouter.get('/products/search', productController.getItemSearch);
 indexRouter.get('/products/:id', productController.getQueryItem);
 indexRouter.get('/products', productController.getAllProducts);
 

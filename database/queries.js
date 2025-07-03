@@ -25,9 +25,19 @@ async function getQueryCatagories(id) {
   return rows;
 }
 
+async function getItemSearch(name) {
+  const { rows } = await pool.query(
+    'SELECT name, id, price FROM products WHERE name ILIKE $1',
+    [`%${name}%`]
+  );
+  console.log(rows);
+  return rows;
+}
+
 module.exports = {
   getAllCatagories,
   getAllProducts,
   getQueryItem,
   getQueryCatagories,
+  getItemSearch,
 };
