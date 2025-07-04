@@ -38,6 +38,10 @@ async function postCatagory(name) {
   await pool.query('INSERT INTO catagories (name) VALUES ($1)', [name]);
 }
 
+async function modifyCatagoryPost(name, id) {
+  await pool.query('UPDATE catagories SET name = $1 WHERE id = $2', [name, id]);
+}
+
 module.exports = {
   getAllCatagories,
   getAllProducts,
@@ -45,4 +49,5 @@ module.exports = {
   getQueryCatagories,
   getItemSearch,
   postCatagory,
+  modifyCatagoryPost,
 };

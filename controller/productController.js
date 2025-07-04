@@ -29,11 +29,20 @@ async function getItemSearch(req, res) {
 }
 
 async function createCatagoryGet(req, res) {
-  res.render('catagoryForm');
+  res.render('catagoryForm', { title: 'Create New Catagory' });
 }
 
 async function createCatagoryPost(req, res) {
   await db.postCatagory(req.body.name);
+  res.redirect('/catagories');
+}
+
+async function modifyCatagoryGet(req, res) {
+  res.render('catagoryModify', { title: 'Modify Catagory', id: req.params.id });
+}
+
+async function modifyCatagoryPost(req, res) {
+  await db.modifyCatagoryPost(req.body.name, req.params.id);
   res.redirect('/catagories');
 }
 
@@ -45,4 +54,6 @@ module.exports = {
   getItemSearch,
   createCatagoryGet,
   createCatagoryPost,
+  modifyCatagoryGet,
+  modifyCatagoryPost,
 };

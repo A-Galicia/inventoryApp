@@ -11,7 +11,7 @@
     <%- include('navBar.ejs') %>
     <div class="main">
       <h1><%= title %></h1>
-      <form action="/catagories/form" method="post">
+      <form action="/catagories/modify/<%= id%>" method="post">
         <label for="name">Name of catagory:</label>
         <input id="name" type="text" name="name" required>
         <button type="submit">Submit</button>

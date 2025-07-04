@@ -6,8 +6,13 @@ const indexRouter = Router();
 
 // POST ///////////////////////////////////////////////////////////
 indexRouter.post('/catagories/form', productController.createCatagoryPost);
+indexRouter.post(
+  '/catagories/modify/:id',
+  productController.modifyCatagoryPost
+);
 
 // GET ////////////////////////////////////////////////////////////
+indexRouter.get('/catagories/modify/:id', productController.modifyCatagoryGet);
 indexRouter.get('/catagories/form', productController.createCatagoryGet);
 indexRouter.get('/catagories/:id', productController.getQueryCatagories);
 indexRouter.get('/catagories', productController.getAllCatagories);
