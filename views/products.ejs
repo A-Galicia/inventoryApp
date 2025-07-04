@@ -24,6 +24,14 @@
           <a href="/products/Modify/<%= product.id %>"
             >Modify <%= product.name %></a
           >
+          <form action="/products/delete/<%= product.id %>" method="post">
+            <button
+              type="submit"
+              onclick="return confirm('This will permanently delete this product and its data');"
+            >
+              Delete <%= product.name %>
+            </button>
+          </form>
         </div>
         <% }) %>
       </div>

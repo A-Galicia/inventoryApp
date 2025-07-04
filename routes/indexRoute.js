@@ -19,6 +19,7 @@ indexRouter.post('/catagories/delete/:id', productController.deleteCatagory);
 
 indexRouter.post('/products/modify/:id', productController.modifyProductPost);
 indexRouter.post('/products/form', productController.createProductPost);
+indexRouter.post('/products/delete/:id', productController.deleteProduct);
 
 // GET ////////////////////////////////////////////////////////////
 

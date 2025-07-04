@@ -64,6 +64,10 @@ async function postProduct(form) {
   );
 }
 
+async function deleteProduct(id) {
+  await pool.query('DELETE FROM products WHERE id = $1', [id]);
+}
+
 module.exports = {
   getAllCatagories,
   getAllProducts,
@@ -75,4 +79,5 @@ module.exports = {
   deleteCatagory,
   modifyProductPost,
   postProduct,
+  deleteProduct,
 };

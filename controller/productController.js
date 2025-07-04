@@ -86,6 +86,11 @@ async function createProductPost(req, res) {
   res.redirect('/products');
 }
 
+async function deleteProduct(req, res) {
+  await db.deleteProduct(req.params.id);
+  res.redirect('/products');
+}
+
 //_________________________________________________________________
 
 module.exports = {
@@ -103,4 +108,5 @@ module.exports = {
   modifyProductPost,
   createProductGet,
   createProductPost,
+  deleteProduct,
 };
