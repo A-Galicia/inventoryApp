@@ -18,6 +18,7 @@ indexRouter.post('/catagories/delete/:id', productController.deleteCatagory);
 // Products
 
 indexRouter.post('/products/modify/:id', productController.modifyProductPost);
+indexRouter.post('/products/form', productController.createProductPost);
 
 // GET ////////////////////////////////////////////////////////////
 
@@ -29,6 +30,7 @@ indexRouter.get('/catagories/:id', productController.getQueryCatagories);
 indexRouter.get('/catagories', productController.getAllCatagories);
 
 // Products
+indexRouter.get('/products/form', productController.createProductGet);
 indexRouter.get('/products/modify/:id', productController.modifyProductGet);
 indexRouter.get('/products/search', productController.getItemSearch);
 indexRouter.get('/create/:id', productController.getQueryItem);

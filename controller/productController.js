@@ -73,6 +73,19 @@ async function modifyProductPost(req, res) {
   res.redirect('/products');
 }
 
+async function createProductGet(req, res) {
+  const catagories = await db.getAllCatagories();
+  res.render('productForm', {
+    title: 'Create New Catagory',
+    catagories: catagories,
+  });
+}
+
+async function createProductPost(req, res) {
+  await db.postProduct(req.body);
+  res.redirect('/products');
+}
+
 //_________________________________________________________________
 
 module.exports = {
@@ -88,4 +101,6 @@ module.exports = {
   deleteCatagory,
   modifyProductGet,
   modifyProductPost,
+  createProductGet,
+  createProductPost,
 };
