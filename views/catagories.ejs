@@ -22,6 +22,14 @@
         <a href="/catagories/modify/<%= catagory.id %>"
           >Modify <%= catagory.name %></a
         >
+        <form action="/catagories/delete/<%= catagory.id %>" method="post">
+          <button
+            type="submit"
+            onclick="return confirm('This will delete the catagory and its associated products');"
+          >
+            Delete <%= catagory.name %>
+          </button>
+        </form>
         <% }) %>
       </div>
     </div>

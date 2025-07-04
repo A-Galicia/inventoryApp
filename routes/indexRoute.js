@@ -10,6 +10,7 @@ indexRouter.post(
   '/catagories/modify/:id',
   productController.modifyCatagoryPost
 );
+indexRouter.post('/catagories/delete/:id', productController.deleteCatagory);
 
 // GET ////////////////////////////////////////////////////////////
 indexRouter.get('/catagories/modify/:id', productController.modifyCatagoryGet);

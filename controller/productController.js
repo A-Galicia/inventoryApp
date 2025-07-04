@@ -46,6 +46,11 @@ async function modifyCatagoryPost(req, res) {
   res.redirect('/catagories');
 }
 
+async function deleteCatagory(req, res) {
+  await db.deleteCatagory(req.params.id);
+  res.redirect('/catagories');
+}
+
 module.exports = {
   getAllCatagories,
   getQueryCatagories,
@@ -56,4 +61,5 @@ module.exports = {
   createCatagoryPost,
   modifyCatagoryGet,
   modifyCatagoryPost,
+  deleteCatagory,
 };

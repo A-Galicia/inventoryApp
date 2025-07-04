@@ -42,6 +42,13 @@ async function modifyCatagoryPost(name, id) {
   await pool.query('UPDATE catagories SET name = $1 WHERE id = $2', [name, id]);
 }
 
+async function deleteCatagory(id) {
+  console.log('in db');
+  //deletes cartagories and products in that catagory
+  await pool.query('DELETE FROM catagories WHERE id = $1', [id]);
+  await pool.query('DELETE FROM products WHERE catagory_id = $1', [id]);
+}
+
 module.exports = {
   getAllCatagories,
   getAllProducts,
@@ -50,4 +57,5 @@ module.exports = {
   getItemSearch,
   postCatagory,
   modifyCatagoryPost,
+  deleteCatagory,
 };
