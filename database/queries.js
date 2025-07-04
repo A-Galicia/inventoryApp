@@ -21,7 +21,6 @@ async function getQueryCatagories(id) {
     'SELECT DISTINCT products.name, products.id FROM catagories INNER JOIN products ON catagory_id = $1',
     [id]
   );
-  console.log(rows);
   return rows;
 }
 
@@ -30,7 +29,7 @@ async function getItemSearch(name) {
     'SELECT name, id, price FROM products WHERE name ILIKE $1',
     [`%${name}%`]
   );
-  console.log(rows);
+
   return rows;
 }
 
@@ -43,10 +42,17 @@ async function modifyCatagoryPost(name, id) {
 }
 
 async function deleteCatagory(id) {
-  console.log('in db');
   //deletes cartagories and products in that catagory
   await pool.query('DELETE FROM catagories WHERE id = $1', [id]);
   await pool.query('DELETE FROM products WHERE catagory_id = $1', [id]);
+}
+
+async function modifyProductPost(ProductId, form) {
+  const { name, catagory, price, description } = form;
+  await pool.query(
+    'UPDATE products SET name = $2,catagory_id = $3, price = $4 ,description = $5 WHERE id = $1',
+    [ProductId, name, catagory, price, description]
+  );
 }
 
 module.exports = {
@@ -58,4 +64,5 @@ module.exports = {
   postCatagory,
   modifyCatagoryPost,
   deleteCatagory,
+  modifyProductPost,
 };

@@ -10,7 +10,6 @@ async function getAllCatagories(req, res) {
 }
 
 async function getQueryCatagories(req, res) {
-  console.log(req.params.id);
   const products = await db.getQueryCatagories(req.params.id);
   res.render('singleCatagory', { catagory: products });
 }
@@ -70,11 +69,8 @@ async function modifyProductGet(req, res) {
 }
 
 async function modifyProductPost(req, res) {
-  console.log(req.params);
-  console.log(req.body);
-  res.send('in controller');
-  /* await db.modifyCatagoryPost(req.body.name, req.params.id);
-  res.redirect('/catagories'); */
+  await db.modifyProductPost(req.params.id, req.body);
+  res.redirect('/products');
 }
 
 //_________________________________________________________________
