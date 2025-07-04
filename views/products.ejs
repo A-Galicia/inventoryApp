@@ -13,12 +13,17 @@
       <h1><%= title %></h1>
       <div class="productDiv">
         <% products.map((product) => { %>
-        <a href="/products/<%= product.id %>">
-          <div class="product">
-            <p>Product: <%= product.name %></p>
-            <p>Price: $<%= product.price %></p>
-          </div>
-        </a>
+        <div>
+          <a href="/products/<%= product.id %>">
+            <div class="product">
+              <p>Product: <%= product.name %></p>
+              <p>Price: $<%= product.price %></p>
+            </div>
+          </a>
+          <a href="/products/Modify/<%= product.id %>"
+            >Modify <%= product.name %></a
+          >
+        </div>
         <% }) %>
       </div>
     </div>

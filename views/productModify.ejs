@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Inventory</title>
+    <link rel="stylesheet" href="/catagories.css" />
+    <link rel="stylesheet" href="/navBarFooter.css" />
+  </head>
+  <body>
+    <%- include('navBar.ejs') %>
+    <div class="main">
+      <h1><%= title %></h1>
+      <form action="/products/modify/<%= product.id%>" method="post">
+        <label for="name">Name of product:</label>
+        <input id="name" type="text" name="name" value="<%= product.name%>" required>
+        <label for="catagory">Catagory product is in:</label>
+        <select id="catagory" name="catagory" required>
+            
+            <% catagories.map((catagory) => { %>
+                <option value="<%= catagory.id%>"><%= catagory.name%></option>
+                <% }) %>
+
+
+        </select>
+        <label for="price">Price: </label>
+        <input id="price" type="number" name="price" value="<%= product.price%>" required>
+        <label for="description">description:</label>
+        <textarea name="description" id="description" required><%= product.description %></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,8 @@
 const db = require('../database/queries');
 
 //
+//
+// Catagory functions =============================================
 
 async function getAllCatagories(req, res) {
   const catagories = await db.getAllCatagories();
@@ -11,21 +13,6 @@ async function getQueryCatagories(req, res) {
   console.log(req.params.id);
   const products = await db.getQueryCatagories(req.params.id);
   res.render('singleCatagory', { catagory: products });
-}
-
-async function getQueryItem(req, res) {
-  const item = await db.getQueryItem(req.params.id);
-  res.render('item', { item: item });
-}
-
-async function getAllProducts(req, res) {
-  const products = await db.getAllProducts();
-  res.render('products', { title: 'All Products', products: products });
-}
-
-async function getItemSearch(req, res) {
-  const result = await db.getItemSearch(req.query.name);
-  res.render('products', { title: 'Search Results', products: result });
 }
 
 async function createCatagoryGet(req, res) {
@@ -51,6 +38,47 @@ async function deleteCatagory(req, res) {
   res.redirect('/catagories');
 }
 
+//_________________________________________________________________
+
+//
+
+// Product Functions ==============================================
+
+async function getItemSearch(req, res) {
+  const result = await db.getItemSearch(req.query.name);
+  res.render('products', { title: 'Search Results', products: result });
+}
+
+async function getQueryItem(req, res) {
+  const item = await db.getQueryItem(req.params.id);
+  res.render('item', { item: item });
+}
+
+async function getAllProducts(req, res) {
+  const products = await db.getAllProducts();
+  res.render('products', { title: 'All Products', products: products });
+}
+
+async function modifyProductGet(req, res) {
+  const product = await db.getQueryItem(req.params.id);
+  const catagories = await db.getAllCatagories();
+  res.render('productModify', {
+    title: 'Modify Product',
+    product: product,
+    catagories: catagories,
+  });
+}
+
+async function modifyProductPost(req, res) {
+  console.log(req.params);
+  console.log(req.body);
+  res.send('in controller');
+  /* await db.modifyCatagoryPost(req.body.name, req.params.id);
+  res.redirect('/catagories'); */
+}
+
+//_________________________________________________________________
+
 module.exports = {
   getAllCatagories,
   getQueryCatagories,
@@ -62,4 +90,6 @@ module.exports = {
   modifyCatagoryGet,
   modifyCatagoryPost,
   deleteCatagory,
+  modifyProductGet,
+  modifyProductPost,
 };
