@@ -76,7 +76,7 @@ async function modifyProductPost(req, res) {
 async function createProductGet(req, res) {
   const catagories = await db.getAllCatagories();
   res.render('productForm', {
-    title: 'Create New Catagory',
+    title: 'Create New Product',
     catagories: catagories,
   });
 }

@@ -23,8 +23,19 @@ li {
 .navAnchor {
   display: block;
   width: max-content;
-  border: 5px solid red;
   width: max-content;
   text-decoration: none;
   color: black;
+  border-radius: 20px;
+}
+
+.divAnchor {
+  border: 5px solid blue;
+  border-radius: 20px;
+  margin-inline: 5px;
+}
+
+.searchBtn {
+  border: 2px solid black;
+  border-radius: 10px;
 }

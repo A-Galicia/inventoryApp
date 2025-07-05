@@ -10,7 +10,6 @@ body {
 
 .catagoryDiv {
   display: flex;
-  border: 5px solid red;
   flex-direction: column;
   width: 40%;
 }
@@ -27,7 +26,17 @@ body {
 
 .catagoryAnchor {
   display: block;
-  border: 5px solid red;
   text-decoration: none;
   color: black;
+}
+
+.delete {
+  border: 2px solid black;
+  border-radius: 10px;
+  color: rgb(137, 1, 1);
+}
+
+.actionDiv {
+  display: flex;
+  justify-content: space-between;
 }

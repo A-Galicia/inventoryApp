@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Inventory</title>
-    <link rel="stylesheet" href="catagories.css" />
-    <link rel="stylesheet" href="navBarFooter.css" />
+    <link rel="stylesheet" href="/catagories.css" />
+    <link rel="stylesheet" href="/navBarFooter.css" />
   </head>
   <body>
     <%- include('navBar.ejs') %>
     <div class="main">
       <h1>Catagories</h1>
-      <a href="/catagories/form">Create New Catagory</a>
+      <a class="catagoryAnchor" href="/catagories/form">Create New Catagory</a>
       <div class="catagoryDiv">
         <% catagories.map((catagory) => { %>
         <a class="catagoryAnchor" href="/catagories/<%= catagory.id %>">
@@ -19,17 +19,21 @@
             <p><%= catagory.name %></p>
           </div>
         </a>
-        <a href="/catagories/modify/<%= catagory.id %>"
-          >Modify <%= catagory.name %></a
-        >
-        <form action="/catagories/delete/<%= catagory.id %>" method="post">
-          <button
-            type="submit"
-            onclick="return confirm('This will delete the catagory and its associated products');"
+
+        <div class="actionDiv">
+          <a class="catagoryAnchor" href="/catagories/modify/<%= catagory.id %>"
+            >Modify <%= catagory.name %></a
           >
-            Delete <%= catagory.name %>
-          </button>
-        </form>
+          <form action="/catagories/delete/<%= catagory.id %>" method="post">
+            <button
+              class="delete"
+              type="submit"
+              onclick="return confirm('This will delete the catagory and its associated products');"
+            >
+              Delete <%= catagory.name %>
+            </button>
+          </form>
+        </div>
         <% }) %>
       </div>
     </div>

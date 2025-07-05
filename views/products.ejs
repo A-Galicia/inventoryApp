@@ -14,7 +14,7 @@
       <a href="/products/form">Create New Product</a>
       <div class="productDiv">
         <% products.map((product) => { %>
-        <div>
+        <div class="item">
           <a href="/products/<%= product.id %>">
             <div class="product">
               <p>Product: <%= product.name %></p>
@@ -26,6 +26,7 @@
           >
           <form action="/products/delete/<%= product.id %>" method="post">
             <button
+              class="delete"
               type="submit"
               onclick="return confirm('This will permanently delete this product and its data');"
             >

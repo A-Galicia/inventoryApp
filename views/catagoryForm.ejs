@@ -4,19 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Inventory</title>
-    <link rel="stylesheet" href="/catagories.css" />
+    <link rel="stylesheet" href="/form.css" />
     <link rel="stylesheet" href="/navBarFooter.css" />
   </head>
   <body>
     <%- include('navBar.ejs') %>
     <div class="main">
       <h1><%= title %></h1>
-      <form action="/catagories/form" method="post">
+      <form class="form" action="/catagories/form" method="post">
         <label for="name">Name of catagory:</label>
-        <input id="name" type="text" name="name" required>
-        <button type="submit">Submit</button>
+        <input id="name" type="text" name="name" required />
+        <button class="submit" type="submit">Submit</button>
       </form>
-      </div>
     </div>
   </body>
 </html>

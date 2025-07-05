@@ -56,7 +56,6 @@ async function modifyProductPost(ProductId, form) {
 }
 
 async function postProduct(form) {
-  console.log(form);
   const { name, catagory, price, description } = form;
   await pool.query(
     'INSERT INTO products (catagory_id, name, price, description) VALUES ($2, $1, $3, $4)',
